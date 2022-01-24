@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Git clone'){
             steps{
-                git 'https://github.com/shazforiot/HelloWorld-Springboot-App.git'
+                git 'https://github.com/donwany/HelloWorld-Springboot-App.git'
             }
         }
         
@@ -15,6 +15,12 @@ pipeline{
         stage('Create Dockerimage'){
             steps{
                 sh 'docker build -t thetips4you/springboot:latest .'
+            }
+        }
+        
+         stage('Completed'){
+            steps{
+                echo 'Build completed successfully ...'
             }
         }
         
