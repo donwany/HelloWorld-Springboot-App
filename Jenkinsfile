@@ -1,6 +1,7 @@
 pipeline{
     agent any
     stages{
+        
         stage('Git clone'){
             steps{
                 git 'https://github.com/donwany/HelloWorld-Springboot-App.git'
@@ -12,6 +13,7 @@ pipeline{
                 sh 'mvn package'
             }
         }
+        
         stage('Create Dockerimage'){
             steps{
                 sh 'docker build -t worldbosskafka/springboot:latest .'
